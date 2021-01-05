@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>CALCULATOR</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+</head>
+<body>
+    <div class="w-full sm:w-96 bg-gray-200 mx-auto p-2 rounded-md  h-screen" id="calculator">
+        <!-- head -->
+        <div class="flex justify-between  h-20">
+            <!-- hamburger -->
+            <div class="cursor-pointer">
+                <svg  class="w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+                </svg>
+            </div>
+
+            <!-- title -->
+            <h1 class="text-2xl font-bold text-gray-500">Calculator</h1>
+
+            <!-- dark/light mode -->
+            <div class="flex relative w-8 cursor-pointer">
+                <!-- moon -->
+                <svg class="w-8 absolute left-0 top-0 hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
+
+                <!-- sun -->
+                <svg class="w-8 absolute left-0 top-0 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- display -->
+        <div class="w-full h-1/3 bg-gray-300 round">
+            <div id='inputs' class=" text-3xl h-3/4"> </div>
+            <div id="result" class=" mr-4 text-5xl h-1/4  flex justify-end items-center">0</div>
+        </div>
+
+        <!-- keys -->
+        <div class="grid grid-cols-4 gap-2 h-2/4 mt-4" id="keys">
+
+            <!-- plus -->
+            <button data-action="add">
+                +
+            </button>
+
+            <!-- minus -->
+            <button data-action="subtract">
+                -
+            </button>
+
+            <!-- times -->
+            <button data-action="multiply">
+                x
+            </button>
+
+            <!-- divide -->
+            <button data-action="divide">
+                ÷
+            </button>
+
+            <!-- delete -->
+            <button data-action="delete" class="col-start-3 col-end-4 row-start-5 row-end-6 flex justify-center items-center">
+                <svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
+                </svg>
+            </button>
+            <button class="col-start-1 col-end-2 row-start-2 row-end-3">1</button>
+            <button class="col-start-2 col-end-3 row-start-2 row-end-3">2</button>
+            <button class="col-start-3 col-end-4 row-start-2 row-end-3">3</button>
+            <button class="col-start-1 col-end-2 row-start-3 row-end-4">4</button>
+            <button class="col-start-2 col-end-3 row-start-3 row-end-4">5</button>
+            <button class="col-start-3 col-end-4 row-start-3 row-end-4">6</button>
+            <button class="col-start-1 col-end-2 row-start-4 row-end-5">7</button>
+            <button class="col-start-2 col-end-3 row-start-4 row-end-5">8</button>
+            <button class="col-start-3 col-end-4 row-start-4 row-end-5">9</button>
+            <button class="col-start-2 col-end-3 row-start-5 row-end-6">0</button>
+            <button class="col-start-4 col-end-5 row-start-4 row-end-6 bg-yellow-500" data-action="calculate">=</button>
+            <button class="col-start-4 col-end-5 row-start-3 row-end-4" data-action="bracket">()</button>
+            <!-- clears all screen inputs-->
+            <button data-action="clear">AC</button>
+
+            <button class="col-start-1 col-end-2 row-start-5 row-end-6" data-action="decimal">.</button>
+        </div>
+    </div>
+    <script src='app.js'></script>
+</body>
+</html>
